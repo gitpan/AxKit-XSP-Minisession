@@ -1,3 +1,7 @@
 Minisession.pm
 Makefile.PL
 MANIFEST
+debian/changelog
+debian/control
+debian/copyright
+debian/rules

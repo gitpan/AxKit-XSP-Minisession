@@ -1,0 +1,41 @@
+libaxkit-xsp-minisession-perl (1.1-1) unstable; urgency=low
+
+  * Tidied up (barf) locking semantics.
+  * Another public release.
+
+ -- Simon Cozens <simon@ermine.ox.ac.uk>  Tue,  9 Jul 2002 11:43:08 +0100
+
+libaxkit-xsp-minisession-perl (1.0-5) unstable; urgency=low
+
+  * Race condition between cookie and new creation.
+
+ -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Mon,  8 Jul 2002 15:54:54 +0100
+
+libaxkit-xsp-minisession-perl (1.0-4) unstable; urgency=low
+
+  * Allow multiple settings at once.
+
+ -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Mon,  8 Jul 2002 14:07:34 +0100
+
+libaxkit-xsp-minisession-perl (1.0-3) unstable; urgency=low
+
+  * This is the one that hit CPAN.
+  * Really unsubtle renaming
+
+ -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Wed, 12 Jun 2002 15:29:48 +0100
+
+liboucs-minisession-perl (1.0-2) unstable; urgency=low
+
+  * This one actually works.
+
+ -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Wed, 29 May 2002 11:52:22 +0100
+
+liboucs-minisession-perl (1.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Simon Cozens <simon@ermine.ox.ac.uk>  Thu, 23 May 2002 11:37:40 +0100
+
+Local variables:
+mode: debian-changelog
+End:

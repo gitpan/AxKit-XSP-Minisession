@@ -1,0 +1,11 @@
+Source: libaxkit-xsp-minisession-perl
+Section: interpreters
+Priority: optional
+Maintainer: Simon Cozens <simon@ermine.ox.ac.uk>
+Standards-Version: 3.0.1
+
+Package: libaxkit-xsp-minisession-perl
+Architecture: all
+Depends: perl5, libapache-session-perl
+Description: Simple session management with taglib wrapper.
+ A very simple session library for use in the coursebooking database.

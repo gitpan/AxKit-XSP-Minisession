@@ -1,6 +1,6 @@
 package AxKit::XSP::Minisession;
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "0.02";
+$VERSION = "1.01";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }
@@ -57,7 +57,6 @@ sub get_session {
     my $r = shift;
     my $sid;
 
-    # Has it come from the fixup handler?
     if (!($sid = $r->pnotes("SESSION_ID"))) {
         # Has it come from a cookie?
         my %jar = Apache::Cookie->new($r)->parse;
@@ -79,7 +78,7 @@ sub get_session {
         LockDirectory => $r->dir_config("MinisessionLockDir") || "/tmp/sessionlock",
     };
 
-    $r->pnotes("SESSION", { %session });
+    $r->pnotes("SESSION_ID", $sid);
     $r->log->debug("Session contains @{[%session]}");
     if ($new) {
        put_session($r, \%session);
@@ -96,8 +95,7 @@ sub put_session {
         -path => "/"
     );
     $cookie->bake();
-    $r->pnotes("SESSION", { %$sess_ref });
-    untie $sess_ref;
+    $r->pnotes("SESSION_ID", $sess_ref->{_session_id});
 }
 
 sub get_value {
@@ -106,17 +104,29 @@ sub get_value {
     my $sref = get_session($r);
     $r->log->debug("get_value saw session ".$sref->{_session_id});
     $r->log->debug("retrieving $key -> $sref->{$key}");
-    return $sref->{$key};
+    my $v = $sref->{$key};
+    # Make damn sure the locks are released.
+    my $obj = tied %$sref;
+    untie %$sref;
+    $obj->DESTROY;
+    return $v;
 }
 
 sub put_value {
     my $r = shift;
-    my $key = shift;
-    my $val = shift;
-    my $sref = get_session($r);
-    $r->log->debug("set_value saw session ".$sref->{_session_id}. ", setting $key to $val");
-    $sref->{$key} = $val;
+    while (@_) {
+        my $key = shift;
+        my $val = shift;
+        my $sref = get_session($r);
+        $r->log->debug("set_value saw session ".$sref->{_session_id}. ", setting $key to $val");
+        $sref->{$key} = $val;
+    }
+
     put_session($r, $sref);
+    # Make damn sure the locks are released.
+    my $obj = tied %$sref;
+    untie %$sref;
+    $obj->DESTROY;
     return undef; # To stop xsp leakage.
 }
 
