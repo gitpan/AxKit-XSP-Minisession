@@ -1,6 +1,6 @@
 package AxKit::XSP::Minisession;
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.01";
+$VERSION = "1.02";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }
@@ -52,6 +52,7 @@ package AxKit::XSP::Minisession::Backend;
 use Apache::Log;
 use Apache::Session::File;
 use Apache::Cookie;
+use strict;
 
 sub get_session {
     my $r = shift;
@@ -114,10 +115,10 @@ sub get_value {
 
 sub put_value {
     my $r = shift;
+    my $sref = get_session($r);
     while (@_) {
         my $key = shift;
         my $val = shift;
-        my $sref = get_session($r);
         $r->log->debug("set_value saw session ".$sref->{_session_id}. ", setting $key to $val");
         $sref->{$key} = $val;
     }

@@ -1,3 +1,9 @@
+libaxkit-xsp-minisession-perl (1.2-1) unstable; urgency=low
+
+  * Bugger! Really bad bug fixed by "use strict".
+
+ -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Tue,  9 Jul 2002 12:09:38 +0100
+
 libaxkit-xsp-minisession-perl (1.1-1) unstable; urgency=low
 
   * Tidied up (barf) locking semantics.
