@@ -1,13 +1,19 @@
-# $Id: extra.conf.in 110 2005-02-03 23:54:06Z claco $
-PerlModule AxKit
-AxNoCache On
-AxDebugLevel 5
-AxAddProcessor application/x-xsp .
-
+# $Id: extra.conf.in 320 2005-03-05 18:07:22Z claco $
 PerlSetVar MinisessionDir @documentroot@/session
 PerlSetVar MinisessionLockDir @documentroot@/sessionlock
-AxAddXSPTaglib AxKit::XSP::Minisession
 
-<Files *.xsp>
-	SetHandler AxKit
-</Files>
+<IfModule mod_perl.c>
+	<IfDefine AXKIT>
+		PerlModule		AxKit
+		AxNoCache		On
+		AxLogDeclines	On
+		AxDebugLevel	10
+		AxStackTrace	On
+		AxAddProcessor	application/x-xsp .
+		AxAddXSPTaglib	AxKit::XSP::Minisession
+
+		<Files *.xsp>
+			SetHandler	AxKit
+		</Files>
+	</IfDefine>
+</IfModule>

@@ -1,10 +1,13 @@
-# $Id: Minisession.pm 128 2005-02-05 18:32:55Z claco $
+# $Id: Minisession.pm 320 2005-03-05 18:07:22Z claco $
 package AxKit::XSP::Minisession;
+use strict;
+use warnings;
+use vars qw/$VERSION $NS/;
+use base 'Apache::AxKit::Language::XSP';
 
-use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.06";
-@ISA = ('Apache::AxKit::Language::XSP');
+$VERSION = "1.07";
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
+
 sub start_document { 'use Apache::Log;' }
 
 sub parse_char {
@@ -52,11 +55,11 @@ sub parse_start {
 }
 
 package AxKit::XSP::Minisession::Backend;
-
 use Apache::Log;
 use Apache::Session::File;
 use Apache::Cookie;
 use strict;
+use warnings;
 
 sub get_session {
     my $r = shift;
@@ -156,11 +159,11 @@ In your config file:
 In your XSP code:
 
     <xsp:page
-        xmlns:s="http://squash.oucs.ox.ac.uk/XSP/Minisession"
+        xmlns:session="http://squash.oucs.ox.ac.uk/XSP/Minisession"
     >
 
-    <s:set-value username="simon"/>
-    <s:get-value>username</s:get-value>
+    <session:set-value username="simon"/>
+    <session:get-value>username</s:get-value>
 
 In your Perl code:
 
@@ -172,7 +175,7 @@ In your Perl code:
 
 This is a very simple session library which sets state via a cookie and
 uses C<Apache::Session::File> to store sessions in files on the
-filesystem. If you need anything more complex than that, this module
+file system. If you need anything more complex than that, this module
 isn't for you.
 
 The guts of the module are the two functions C<get_value> and
@@ -184,12 +187,23 @@ from XSP.
 
 And that's it. I said it was very simple.
 
-=head1 AUTHORS
+=head1 TAG REFERENCE
 
-Christopher H. Laco C<axkit@chrislaco.com> - I've picked up maintainership of
-this module from Simon. With any luck I'll be able to add something  aside from
-general house keeping skills.
+=head2 set-value
 
-Simon Cozens C<simon@cpan.org>
+Assigns the given name/value pair to the currenct session.
 
+=head2 get-value
 
+Returns the currenct session value for the itemd requested.
+
+=head1 AUTHOR
+
+    Christopher H. Laco
+    CPAN ID: CLACO
+    cpan@chrislaco.com
+    http://today.icantfocus.com/blog/
+
+=head1 AUTHOR EMERITUS
+
+The original version was created by Simon Cozens.

@@ -2,10 +2,11 @@ MANIFEST
 MANIFEST.SKIP
 META.yml
 LICENSE
+README
 Todo
 Changes
-Copyright
 lib/AxKit/XSP/Minisession.pm
+t/SMOKE.PL
 t/TEST.PL
 t/conf/extra.conf.in
 t/htdocs/get-value.xsp

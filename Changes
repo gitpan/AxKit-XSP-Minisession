@@ -1,71 +1,27 @@
-$Id: Changes 128 2005-02-05 18:32:55Z claco $
+$Id: Changes 320 2005-03-05 18:07:22Z claco $
 Revision history for Perl module AxKit::XSP::Minisession
 
+1.07 Sat Mar 05 13:27:02 2005
+    - Added README To make CPANTS happy. :-)
+    - Various pod cleanups and corrections
+    - Makefile.PL and extra.conf.in now use IfDefine to die gracefully
+
 1.06 Sat Feb 05 13:36:26 2005
-	- Changed Makefile.PL to use File::Path to fix permissions issues on
-	  *nix for generated session* directories
+    - Changed Makefile.PL to use File::Path to fix permissions issues on
+        *nix for generated session* directories
 
 1.05 Thur Feb 03 18:33:26 2005
-	- Moved from CVS to Subversion
-	- Adjusted Id tags for SVN move
-	- Fixed encoding="utf8" error in t/*.xsp files
-	- Added MANIFEST.SKIP
+    - Moved from CVS to Subversion
+    - Adjusted Id tags for SVN move
+    - Fixed encoding="utf8" error in t/*.xsp files
+    - Added MANIFEST.SKIP
 
 1.04 Wed Nov 24 20:21:51 2004
-	- Added Test::Pod and Test::Pod::Coverage tests
-	- Added Apache::Test -> AxKit Taglib tests
+    - Added Test::Pod and Test::Pod::Coverage tests
+    - Added Apache::Test -> AxKit Taglib tests
 
 1.03 Sat Nov 20 18:25:51 2004
-	- Converted to ExtUtils::ModuleMaker directory structure
-	- Added PREREQ_PM to Makefile.PL
-	- Updated contact information
-	- Added basic Test::More tests
-
-libaxkit-xsp-minisession-perl (1.2-1) unstable; urgency=low
-
-  * Bugger! Really bad bug fixed by "use strict".
-
- -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Tue,  9 Jul 2002 12:09:38 +0100
-
-libaxkit-xsp-minisession-perl (1.1-1) unstable; urgency=low
-
-  * Tidied up (barf) locking semantics.
-  * Another public release.
-
- -- Simon Cozens <simon@ermine.ox.ac.uk>  Tue,  9 Jul 2002 11:43:08 +0100
-
-libaxkit-xsp-minisession-perl (1.0-5) unstable; urgency=low
-
-  * Race condition between cookie and new creation.
-
- -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Mon,  8 Jul 2002 15:54:54 +0100
-
-libaxkit-xsp-minisession-perl (1.0-4) unstable; urgency=low
-
-  * Allow multiple settings at once.
-
- -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Mon,  8 Jul 2002 14:07:34 +0100
-
-libaxkit-xsp-minisession-perl (1.0-3) unstable; urgency=low
-
-  * This is the one that hit CPAN.
-  * Really unsubtle renaming
-
- -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Wed, 12 Jun 2002 15:29:48 +0100
-
-liboucs-minisession-perl (1.0-2) unstable; urgency=low
-
-  * This one actually works.
-
- -- Simon Cozens <simon@squash.oucs.ox.ac.uk>  Wed, 29 May 2002 11:52:22 +0100
-
-liboucs-minisession-perl (1.0-1) unstable; urgency=low
-
-  * Initial Release.
-
- -- Simon Cozens <simon@ermine.ox.ac.uk>  Thu, 23 May 2002 11:37:40 +0100
-
-Local variables:
-mode: debian-changelog
-End:
-
+    - Converted to ExtUtils::ModuleMaker directory structure
+    - Added PREREQ_PM to Makefile.PL
+    - Updated contact information
+    - Added basic Test::More tests

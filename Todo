@@ -1,4 +1,4 @@
-$Id: Todo 110 2005-02-03 23:54:06Z claco $
+$Id: Todo 320 2005-03-05 18:07:22Z claco $
 TODO list for Perl module AxKit::XSP::Minisession
 
-	- Clean up module and pod in Minisession.pm
+    - Change set-value to accept input via parse_char

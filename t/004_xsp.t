@@ -1,4 +1,7 @@
-# $Id: 004_xsp.t 110 2005-02-03 23:54:06Z claco $
+#!perl -wT
+# $Id: 004_xsp.t 320 2005-03-05 18:07:22Z claco $
+use strict;
+use warnings;
 # Using require instead of use to avoid redefining errors
 # when Apache::Test < 1.16 is installed
 require Test::More;

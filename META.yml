@@ -1,14 +1,14 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         AxKit-XSP-Minisession
-version:      1.06
+--- #YAML:1.0
+name: AxKit-XSP-Minisession
+abstract: Yet Another Session Handling Library
+version: 1.07
 version_from: lib\AxKit\XSP\Minisession.pm
-installdirs:  site
+installdirs: site
+license: perl
 requires:
-    Apache::Cookie:                
-    Apache::Log:                   
-    Apache::Session::File:         
-    AxKit:                         
-
+  AxKit: 1.62
+  Apache::Cookie: 0
+  Apache::Log: 0
+  Apache::Session::File: 0
 distribution_type: module
 generated_by: ExtUtils::MakeMaker version 6.17
