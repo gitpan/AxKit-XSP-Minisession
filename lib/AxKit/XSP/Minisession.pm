@@ -1,8 +1,8 @@
-# $Id: Minisession.pm 112 2005-02-03 23:58:59Z claco $
+# $Id: Minisession.pm 128 2005-02-05 18:32:55Z claco $
 package AxKit::XSP::Minisession;
 
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.05";
+$VERSION = "1.06";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }

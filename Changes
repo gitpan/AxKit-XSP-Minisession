@@ -1,5 +1,9 @@
-$Id: Changes 113 2005-02-03 23:59:10Z claco $
+$Id: Changes 128 2005-02-05 18:32:55Z claco $
 Revision history for Perl module AxKit::XSP::Minisession
+
+1.06 Sat Feb 05 13:36:26 2005
+	- Changed Makefile.PL to use File::Path to fix permissions issues on
+	  *nix for generated session* directories
 
 1.05 Thur Feb 03 18:33:26 2005
 	- Moved from CVS to Subversion

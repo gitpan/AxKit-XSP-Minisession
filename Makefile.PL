@@ -1,6 +1,7 @@
-# $Id: Makefile.PL 116 2005-02-04 00:04:16Z claco $
+# $Id: Makefile.PL 128 2005-02-05 18:32:55Z claco $
 use ExtUtils::MakeMaker;
 use File::Spec::Functions;
+use File::Path;
 
 my $sessiondir = catfile('t', 'htdocs', 'session');
 my $sessionlockdir = catfile('t', 'htdocs', 'sessionlock');
@@ -16,8 +17,8 @@ if (!$@) {
     Apache::TestMM::filter_args();
     Apache::TestMM::generate_script($test);
 
-    mkdir($sessiondir, 777);
-    mkdir($sessionlockdir, 777);
+    mkdir($sessiondir);
+    mkdir($sessionlockdir);
 };
 
 WriteMakefile(
