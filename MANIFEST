@@ -15,4 +15,5 @@ t/001_load.t
 t/002_pod.t
 t/003_pod_coverage.t
 t/004_xsp.t
+t/005_strict.t
 Makefile.PL

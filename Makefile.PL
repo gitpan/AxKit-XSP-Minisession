@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 321 2005-03-05 18:09:47Z claco $
+# $Id: Makefile.PL 379 2005-03-10 02:58:06Z claco $
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -33,7 +33,7 @@ WriteMakefile(
     VERSION_FROM    =>  'lib/AxKit/XSP/Minisession.pm',
     ABSTRACT        =>  'Yet Another Session Handling Library',
     ($] >= 5.005 ?
-        (AUTHOR     =>  'Christopher H. Laco (axkit@chrislaco.com)') : ()),
+        (AUTHOR     =>  'Christopher H. Laco <claco@chrislaco.com>') : ()),
     PREREQ_PM       =>  {
         'AxKit'                 => 1.62,
         'Apache::Log'           => undef,

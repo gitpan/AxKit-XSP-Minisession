@@ -1,7 +1,8 @@
 --- #YAML:1.0
 name: AxKit-XSP-Minisession
 abstract: Yet Another Session Handling Library
-version: 1.07
+author: Christopher H. Laco <claco@chrislaco.com>
+version: 1.08
 version_from: lib\AxKit\XSP\Minisession.pm
 installdirs: site
 license: perl
@@ -10,5 +11,10 @@ requires:
   Apache::Cookie: 0
   Apache::Log: 0
   Apache::Session::File: 0
+recommends:
+  Pod::Coverage: 0.14
+  Test::Pod: 1.00
+  Test::Pod::Coverage: 1.04
+  Test:Strict: 0
 distribution_type: module
 generated_by: ExtUtils::MakeMaker version 6.17

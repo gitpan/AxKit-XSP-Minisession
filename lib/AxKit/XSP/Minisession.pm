@@ -1,11 +1,11 @@
-# $Id: Minisession.pm 320 2005-03-05 18:07:22Z claco $
+# $Id: Minisession.pm 417 2005-03-15 02:27:05Z claco $
 package AxKit::XSP::Minisession;
 use strict;
 use warnings;
 use vars qw/$VERSION $NS/;
 use base 'Apache::AxKit::Language::XSP';
 
-$VERSION = "1.07";
+$VERSION = "1.08";
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 
 sub start_document { 'use Apache::Log;' }
@@ -195,13 +195,13 @@ Assigns the given name/value pair to the currenct session.
 
 =head2 get-value
 
-Returns the currenct session value for the itemd requested.
+Returns the currennt session value for the itemd requested.
 
 =head1 AUTHOR
 
     Christopher H. Laco
     CPAN ID: CLACO
-    cpan@chrislaco.com
+    claco@chrislaco.com
     http://today.icantfocus.com/blog/
 
 =head1 AUTHOR EMERITUS
