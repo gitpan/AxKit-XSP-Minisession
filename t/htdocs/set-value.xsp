@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf8"?>
+<!-- $Id: set-value.xsp,v 1.2 2004/11/24 02:55:41 claco Exp $ -->
+<xsp:page xmlns:xsp="http://apache.org/xsp/core/v1"
+	xmlns:minisession="http://squash.oucs.ox.ac.uk/XSP/Minisession"
+>
+	<body><minisession:set-value username="claco"/></body>
+</xsp:page>

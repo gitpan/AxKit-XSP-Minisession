@@ -1,7 +1,8 @@
+# $Id: Minisession.pm,v 1.2 2004/11/24 02:52:00 claco Exp $
 package AxKit::XSP::Minisession;
 
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.03";
+$VERSION = "1.04";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }
@@ -185,5 +186,10 @@ And that's it. I said it was very simple.
 
 =head1 AUTHORS
 
-Christopher H. Laco C<axkit@chrislaco.com>
+Christopher H. Laco C<axkit@chrislaco.com> - I've picked up maintainership of
+this module from Simon. With any luck I'll be able to add something  aside from
+general house keeping skills.
+
 Simon Cozens C<simon@cpan.org>
+
+
