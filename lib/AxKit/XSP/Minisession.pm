@@ -1,8 +1,8 @@
-# $Id: Minisession.pm,v 1.2 2004/11/24 02:52:00 claco Exp $
+# $Id: Minisession.pm 112 2005-02-03 23:58:59Z claco $
 package AxKit::XSP::Minisession;
 
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.04";
+$VERSION = "1.05";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }
@@ -23,9 +23,9 @@ sub parse_end {
     $tag =~ s/-/_/g;
     if ($tag eq "set_value") {
     } elsif ($tag eq "get_value") {
-	$e->manage_text(0);
-	$e->append_to_script("\";AxKit::XSP::Minisession::Backend::get_value(\$r,
-	\$flange);\n");
+    $e->manage_text(0);
+    $e->append_to_script("\";AxKit::XSP::Minisession::Backend::get_value(\$r,
+    \$flange);\n");
         $e->end_expr();
         return "";
     } else { die "Unknown tag $tag\n" }

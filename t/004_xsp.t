@@ -1,4 +1,4 @@
-# $Id: 004_xsp.t,v 1.3 2004/11/25 01:26:06 claco Exp $
+# $Id: 004_xsp.t 110 2005-02-03 23:54:06Z claco $
 # Using require instead of use to avoid redefining errors
 # when Apache::Test < 1.16 is installed
 require Test::More;

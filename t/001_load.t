@@ -1,6 +1,6 @@
-# $Id: 001_load.t,v 1.2 2004/11/24 02:52:00 claco Exp $
+# $Id: 001_load.t 110 2005-02-03 23:54:06Z claco $
 use Test::More tests => 1;
 
 BEGIN {
-	use_ok( 'AxKit::XSP::Minisession' );
+    use_ok( 'AxKit::XSP::Minisession' );
 };

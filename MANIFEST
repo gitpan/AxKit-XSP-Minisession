@@ -1,4 +1,6 @@
 MANIFEST
+MANIFEST.SKIP
+META.yml
 LICENSE
 Todo
 Changes

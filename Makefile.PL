@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.3 2004/11/25 01:20:33 claco Exp $
+# $Id: Makefile.PL 116 2005-02-04 00:04:16Z claco $
 use ExtUtils::MakeMaker;
 use File::Spec::Functions;
 
@@ -8,31 +8,33 @@ my $test = catfile('t', 'TEST');
 
 eval 'use Apache::Test 1.16';
 if (!$@) {
-	require Apache::TestMM;
-	Apache::TestMM->import(qw(test clean));
+    require Apache::TestMM;
+    Apache::TestMM->import(qw(test clean));
 
-	my @scripts = qw(t/TEST);
+    my @scripts = qw(t/TEST);
 
-	Apache::TestMM::filter_args();
-	Apache::TestMM::generate_script($test);
+    Apache::TestMM::filter_args();
+    Apache::TestMM::generate_script($test);
 
-	mkdir($sessiondir, 777);
-	mkdir($sessionlockdir, 777);
+    mkdir($sessiondir, 777);
+    mkdir($sessionlockdir, 777);
 };
 
 WriteMakefile(
-	NAME			=>	'AxKit::XSP::Minisession',
-	VERSION_FROM	=>	catfile('lib', 'AxKit', 'XSP', 'Minisession.pm'),
-	ABSTRACT		=>	'Yet Another Session Handling Library',
-	($] >= 5.005 ?
-		(AUTHOR		=>	'Christopher H. Laco (axkit@chrislaco.com)') : ()),
-	PREREQ_PM		=>	{
-		'AxKit'					=> undef,
-		'Apache::Log'			=> undef,
-		'Apache::Session::File'	=> undef,
-		'Apache::Cookie'		=> undef
-	},
-	clean			=>	{
-		FILES => "$test $sessiondir $sessionlockdir"
-	}
+    NAME            =>  'AxKit::XSP::Minisession',
+    VERSION_FROM    =>  catfile('lib', 'AxKit', 'XSP', 'Minisession.pm'),
+    ABSTRACT        =>  'Yet Another Session Handling Library',
+    ($] >= 5.005 ?
+        (AUTHOR     =>  'Christopher H. Laco (axkit@chrislaco.com)') : ()),
+    PREREQ_PM       =>  {
+        'AxKit'                 => undef,
+        'Apache::Log'           => undef,
+        'Apache::Session::File' => undef,
+        'Apache::Cookie'        => undef
+    },
+    (ExtUtils::MakeMaker->VERSION >= 6.11) ?
+    (NO_META      => 1) : (),
+    clean           =>  {
+        FILES => "$test $sessiondir $sessionlockdir"
+    }
 );
