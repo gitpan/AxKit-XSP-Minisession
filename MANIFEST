@@ -1,7 +1,8 @@
-Minisession.pm
-Makefile.PL
 MANIFEST
-debian/changelog
-debian/control
-debian/copyright
-debian/rules
+LICENSE
+Todo
+Changes
+Copyright
+lib/AxKit/XSP/Minisession.pm
+t/001_load.t
+Makefile.PL

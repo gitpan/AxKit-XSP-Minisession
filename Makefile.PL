@@ -1,10 +1,14 @@
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
 WriteMakefile(
-    'NAME'		=> 'AxKit::XSP::Minisession',
-    'VERSION_FROM'	=> 'Minisession.pm', # finds $VERSION
-    'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-       (AUTHOR     => 'Simon Cozens <simon@ermine.ox.ac.uk>') : ()),
+    NAME         => 'AxKit::XSP::Minisession',
+    VERSION_FROM => 'lib/AxKit/XSP/Minisession.pm',
+    ABSTRACT     => 'Yet Another Session Handling Library',
+    ($] >= 5.005 ?
+        (AUTHOR   => 'Christopher H. Laco (axkit@chrislaco.com)') : ()),
+    PREREQ_PM    => {
+        'AxKit'                 => undef,
+        'Apache::Log'           => undef,
+        'Apache::Session::File' => undef,
+        'Apache::Cookie'        => undef
+    }
 );

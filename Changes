@@ -1,3 +1,11 @@
+Revision history for Perl module AxKit::XSP::Minisession
+
+1.03 Sat Nov 20 18:25:51 2004
+	- Converted to ExtUtils::ModuleMaker directory structure
+	- Added PREREQ_PM to Makefile.PL
+	- Updated contact information
+	- Added basic Test::More tests
+
 libaxkit-xsp-minisession-perl (1.2-1) unstable; urgency=low
 
   * Bugger! Really bad bug fixed by "use strict".
@@ -45,3 +53,4 @@ liboucs-minisession-perl (1.0-1) unstable; urgency=low
 Local variables:
 mode: debian-changelog
 End:
+

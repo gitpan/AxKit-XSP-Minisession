@@ -1,0 +1,4 @@
+TODO list for Perl module AxKit::XSP::Minisession
+
+- Add Apache::Test w/AxKit tests to verify tag -> session file i/o
+- Add Test::Pod and Test::Pod::Coverage tests

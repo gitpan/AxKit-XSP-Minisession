@@ -1,6 +1,7 @@
 package AxKit::XSP::Minisession;
+
 use vars qw/@ISA $VERSION $NS/;
-$VERSION = "1.02";
+$VERSION = "1.03";
 @ISA = ('Apache::AxKit::Language::XSP');
 $NS = 'http://squash.oucs.ox.ac.uk/XSP/Minisession';
 sub start_document { 'use Apache::Log;' }
@@ -20,9 +21,10 @@ sub parse_end {
     my ($e, $tag, %attr) = @_;
     $tag =~ s/-/_/g;
     if ($tag eq "set_value") {
-    } elsif ($tag eq "get_value") { 
+    } elsif ($tag eq "get_value") {
 	$e->manage_text(0);
-	$e->append_to_script("\";AxKit::XSP::Minisession::Backend::get_value(\$r, \$flange);\n");
+	$e->append_to_script("\";AxKit::XSP::Minisession::Backend::get_value(\$r,
+	\$flange);\n");
         $e->end_expr();
         return "";
     } else { die "Unknown tag $tag\n" }
@@ -38,7 +40,8 @@ sub parse_start {
     } elsif ($tag eq "set_value") {
         $e->manage_text(0);
         my $buildup = '';
-        $buildup .= "\$r->log->debug('calling put_value');AxKit::XSP::Minisession::Backend::put_value(\$r, ".
+        $buildup .= "\$r->log->debug('calling
+        put_value');AxKit::XSP::Minisession::Backend::put_value(\$r, ".
                 Apache::AxKit::Language::XSP::makeSingleQuoted($_)
           .", ". Apache::AxKit::Language::XSP::makeSingleQuoted($attr{$_})
             .");\n"
@@ -71,12 +74,13 @@ sub get_session {
     my %session = ();
     my $new = !(defined $sid);
 
-    $r->log->debug(defined $sid ? "Retrieving session $sid" 
-                   : "Creating a new session"); 
+    $r->log->debug(defined $sid ? "Retrieving session $sid"
+                   : "Creating a new session");
 
     tie %session, 'Apache::Session::File', $sid, {
         Directory     => $r->dir_config("MinisessionDir") || "/tmp/sessions",
-        LockDirectory => $r->dir_config("MinisessionLockDir") || "/tmp/sessionlock",
+        LockDirectory => $r->dir_config("MinisessionLockDir") ||
+        "/tmp/sessionlock",
     };
 
     $r->pnotes("SESSION_ID", $sid);
@@ -89,7 +93,8 @@ sub get_session {
 
 sub put_session {
     my ($r, $sess_ref) = @_;
-    $r->log->debug("Returning session ".$sess_ref->{_session_id}." to the cookie jar");
+    $r->log->debug("Returning session ".$sess_ref->{_session_id}." to the cookie
+    jar");
     my $cookie = Apache::Cookie->new($r,
         -name => "sessionid",
         -value => $sess_ref->{_session_id},
@@ -119,7 +124,8 @@ sub put_value {
     while (@_) {
         my $key = shift;
         my $val = shift;
-        $r->log->debug("set_value saw session ".$sref->{_session_id}. ", setting $key to $val");
+        $r->log->debug("set_value saw session ".$sref->{_session_id}. ", setting
+        $key to $val");
         $sref->{$key} = $val;
     }
 
@@ -170,14 +176,14 @@ isn't for you.
 
 The guts of the module are the two functions C<get_value> and
 C<set_value> in the C<::Backend> module. The first parameter to these
-should be an C<Apache::Request> object, and the second a hash key. 
+should be an C<Apache::Request> object, and the second a hash key.
 
 These functions are wrapped by the C<set-value> and C<get-value> tags
 from XSP.
 
 And that's it. I said it was very simple.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
+Christopher H. Laco C<axkit@chrislaco.com>
 Simon Cozens C<simon@cpan.org>
-
