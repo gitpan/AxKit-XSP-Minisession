@@ -43,12 +43,12 @@ TAG REFERENCE
     Assigns the given name/value pair to the currenct session.
 
   get-value
-    Returns the currenct session value for the itemd requested.
+    Returns the currennt session value for the itemd requested.
 
 AUTHOR
         Christopher H. Laco
         CPAN ID: CLACO
-        cpan@chrislaco.com
+        claco@chrislaco.com
         http://today.icantfocus.com/blog/
 
 AUTHOR EMERITUS

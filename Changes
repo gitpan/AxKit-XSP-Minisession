@@ -1,5 +1,8 @@
-$Id: Changes 416 2005-03-15 02:26:47Z claco $
+$Id: Changes 468 2005-03-22 00:16:13Z claco $
 Revision history for Perl module AxKit::XSP::Minisession
+
+1.09 Mon Mar 21 19:13:53 2005
+    - Added Test::Strict warnings_ok tests
 
 1.08 Mon Mar 14 21:13:53 2005
     - Added Test::Strict tests

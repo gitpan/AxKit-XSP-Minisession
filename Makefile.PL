@@ -1,4 +1,4 @@
-# $Id: Makefile.PL 379 2005-03-10 02:58:06Z claco $
+# $Id: Makefile.PL 468 2005-03-22 00:16:13Z claco $
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -42,6 +42,10 @@ WriteMakefile(
     },
     (ExtUtils::MakeMaker->VERSION >= 6.11) ?
     (NO_META      => 1) : (),
+
+    dist => {
+        PREOP => 'pod2text lib/AxKit/XSP/Minisession.pm > $(DISTVNAME)/README',
+    },
     clean           =>  {
         FILES => "t/TEST t/SMOKE smoke-report-* $sessiondir $sessionlockdir t/logs"
     }
