@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- $Id: get-value.xsp 109 2005-02-03 23:53:29Z claco $ -->
+<!-- $Id: /local/CPAN/AxKit-XSP-Minisession/t/htdocs/get-value.xsp 1409 2005-02-03T23:53:29.899242Z claco  $ -->
 <xsp:page xmlns:xsp="http://apache.org/xsp/core/v1"
 	xmlns:minisession="http://squash.oucs.ox.ac.uk/XSP/Minisession"
 >

@@ -1,5 +1,8 @@
-$Id: Changes 468 2005-03-22 00:16:13Z claco $
+$Id: /local/CPAN/AxKit-XSP-Minisession/Changes 1430 2008-03-08T21:44:59.461106Z claco  $
 Revision history for Perl module AxKit::XSP::Minisession
+
+1.10000 Sat Mar 8 16:43:23 2008
+    - Converted to Module::Install
 
 1.09 Mon Mar 21 19:13:53 2005
     - Added Test::Strict warnings_ok tests

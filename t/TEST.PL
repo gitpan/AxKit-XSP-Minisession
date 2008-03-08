@@ -1,5 +1,5 @@
 #!perl
-# $Id: TEST.PL 110 2005-02-03 23:54:06Z claco $
+# $Id: /local/CPAN/AxKit-XSP-Minisession/t/TEST.PL 1410 2005-02-03T23:54:06.055916Z claco  $
 
 use strict;
 use warnings FATAL => 'all';
